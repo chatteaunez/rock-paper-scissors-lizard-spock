@@ -6,20 +6,27 @@
 			i:before{
 				content:attr(data);
 			}
+			section[data=rock]i{content:"R";}
+			section[data=paper]i{content:"P";}
+			section[data=scissors]i{content:"S";}
+			section[data=lizard]i{content:"L";}
+			section[data=spock]i{content:"V";}
 		</style>
 	</head>
 	<body>
 		<section id="computer" data="rock">
+			<i></i>
 		</section>
 		<section id="player" data="paper">
+			<i></i>
 		</section>
-		<section id="select" data="paper">
-			<button>GO</button>
+		<button>GO</button>
+		<section id="select">
 			<i data="rock"></i>
 			<i data="paper"></i>
 			<i data="scissors"></i>
 			<i data="lizard"></i>
-			<i data="spoke"></i>
+			<i data="spock"></i>
 		</section>
 	</body>
 </html>
