@@ -1,17 +1,74 @@
 <!DOCTYPE html>
 <html>
 	<head>
-
+		<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
 		<style>
+			@font-face {
+				font-family: 'FontAwesome';
+				src: url('../fonts/fontawesome-webfont.eot?v=4.6.3');
+				src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.6.3') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.6.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.6.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
+				font-weight: normal;
+				font-style: normal;
+			}
+
+			html{
+				display: table;
+				width: 100%;
+				height: 100%;
+				color: #292526;
+				background: #4c63bd;
+			}
+			body{
+				display: table-cell;
+				vertical-align: middle;
+				margin: 0 auto;
+			}
+			button{
+				outline:none;
+				appearance:none;
+				background:transparent;
+				border:none;
+				cursor:pointer;
+				color: inherit;
+				font-family: 'Alfa Slab One';
+			}
+
 			i:before{
 				content:attr(data);
+				font-family: 'FontAwesome';
+				font-style: normal;
 			}
-			section[data=rock]i{content:"R";}
-			section[data=paper]i{content:"P";}
-			section[data=scissors]i{content:"S";}
-			section[data=lizard]i{content:"L";}
-			section[data=spock]i{content:"V";}
+			[data=rock] i:before 	{content:"\f255";}
+			[data=paper] i:before 	{content:"\f256";}
+			[data=scissors] i:before {content:"\f257";}
+			[data=lizard] i:before 	{content:"\f258";}
+			[data=spock] i:before 	{content:"\f259";}
+			section{
+				text-align: center;
+			}
+			button>i{font-size: 50px;}
+			section>i{font-size: 180px;}
+			#context{
+				font-size: 50px;
+				text-transform: uppercase;
+				margin-bottom: 100px;
+			}
+			#computer{
+				transform:rotate(180deg);
+			}
 		</style>
+
+		<script>
+			var moves = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+			function selectMove(e){
+				var f = e.getAttribute('data');
+				document.getElementById('player').setAttribute('data', f);
+				var c = Math.floor(Math.random() * 5);
+				console.log(c);
+				document.getElementById('computer').setAttribute('data', moves[c]);
+				document.getElementById('context').innerHTML = "go with "+f;
+			}
+		</script>
 	</head>
 	<body>
 		<section id="computer" data="rock">
@@ -20,13 +77,13 @@
 		<section id="player" data="paper">
 			<i></i>
 		</section>
-		<button>GO</button>
+		<section><button id="context">PAPER COVERS ROCK</button></section>
 		<section id="select">
-			<i data="rock"></i>
-			<i data="paper"></i>
-			<i data="scissors"></i>
-			<i data="lizard"></i>
-			<i data="spock"></i>
+			<button onclick="selectMove(this);" data="rock"><i></i></button>
+			<button onclick="selectMove(this);" data="paper"><i></i></button>
+			<button onclick="selectMove(this);" data="scissors"><i></i></button>
+			<button onclick="selectMove(this);" data="lizard"><i></i></button>
+			<button onclick="selectMove(this);" data="spock"><i></i></button>
 		</section>
 	</body>
 </html>
