@@ -25,15 +25,14 @@ var x,y;
 function play(e){
 	document.body.setAttribute('playing','true');
 	var f = e.getAttribute('data');
-	document.getElementById('context').innerHTML = f;
 	y = moves.indexOf(f);
 	x = Math.floor(Math.random() * 5);
+	document.getElementById('context').innerHTML = moves[y];
 	document.getElementById('player').setAttribute('data', moves[y]);
+	document.getElementById('computer').setAttribute('data', moves[x])
 	setTimeout(expressResults,850);
 }
 function expressResults(){
-	document.getElementById('player').setAttribute('data', moves[y]);
-	document.getElementById('computer').setAttribute('data', moves[x]);
 	document.getElementById('context').innerHTML = outputs[Math.abs(corresp[x][y])];
 
 	if(corresp[x][y]<0){document.body.setAttribute('data','lose');}

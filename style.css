@@ -12,10 +12,12 @@ html,body{
 	height: 100%;
 	color: #292526;
 	margin:0;
+	transition: background .3s;
 }
 body[data=draw]{background: #4c63bd;}
 body[data=win]{background: #4cbd75;}
 body[data=lose]{background: #bd4c4c;}
+body[playing=true]{background: #939dab;}
 body>section{
 	display: table-cell;
 	vertical-align: middle;
@@ -106,9 +108,7 @@ body[data=draw] #computer{
 	transition: all .7s;
 	transition-delay:.3s;
 }
-body[playing=true] #computer i{
-	visibility: hidden;
-}
+
 body[playing=true] #computer{
 	transform:translateY(0)rotate(180deg)!important;
 	opacity:1!important;
