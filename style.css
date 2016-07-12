@@ -33,8 +33,7 @@ button{
 	font-family: 'Alfa Slab One';
 }
 
-i:before,
-#context:before{
+i:before{
 	font-family: 'FontAwesome';
 	font-style: normal;
 }
@@ -51,7 +50,7 @@ section{
 	text-align: center;
 }
 button>i{font-size: 50px;}
-section>i{font-size: 180px;}
+section>i{font-size: 180px;line-height:1em;}
 #context{
 	font-size: 50px;
 	line-height: 1.2em;
@@ -62,17 +61,6 @@ section>i{font-size: 180px;}
 
 #computer{
 	transform:rotate(180deg);
-}
-
-
-@media (max-width: 640px){
-	#context{
-		font-size: 28px;
-		height: 72px;
-		margin-bottom: 50px;
-	}
-	button>i{font-size: 40px;}
-	section>i{font-size: 150px;}
 }
 
 #player,#computer{
@@ -139,4 +127,18 @@ footer{
 footer a{
 	color:#FFF!important;
 	text-decoration: none;
+}
+
+@media (max-width: 640px){
+	#context{
+		font-size: 28px;
+		height: 72px;
+		margin-bottom: 50px;
+	}
+	button>i{font-size: 40px;}
+	section>i{font-size: 130px;}
+	footer{
+		font-size: 10px;
+		padding-bottom: 6px;
+	}
 }
