@@ -36,7 +36,8 @@
 				font-family: 'FontAwesome';
 				font-style: normal;
 			}
-			[data=""] i:before 			{}
+			body[playing=true] #computer[data=""] i:before {content:"\f255";}
+			
 			[data=rock] i:before 		{content:"\f255";}
 			[data=paper] i:before 		{content:"\f256";}
 			[data=scissors] i:before 	{content:"\f25b";}
